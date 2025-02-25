@@ -1,0 +1,290 @@
+/* Basic styles for the body and background */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: url('/images/background.jpeg'); /* Add your background image URL here */
+  background-size: cover; /* Make sure the image covers the entire screen */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Keep the background fixed */
+}
+
+/* Completely transparent container for the quiz */
+.quiz-container {
+  background-color: transparent; /* Set the background to fully transparent */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: none; /* Remove the box-shadow to make it fully transparent */
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+  transform-origin: center;
+  backdrop-filter: none; /* No blurred background effect */
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Heading style for the quiz */
+h2 {
+  font-size: 24px;
+  color: #fff; /* White text color for better contrast on dark backgrounds */
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Container for options */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Style for the buttons (making them stack vertically) */
+button {
+  background-color: #d49ac2;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Makes buttons take the full width */
+  max-width: 400px; /* Prevents them from being too wide */
+  margin-left: auto;
+  margin-right: auto; /* Centers the buttons */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Button active (clicked) effect */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Styles for the score display */
+.score-container {
+  font-size: 22px;
+  font-weight: bold;
+  color: #28a745; /* Green for score text */
+  margin-top: 30px;
+  animation: scoreAnimation 1s ease-in-out;
+}
+
+/* Keyframes for score display animation */
+@keyframes scoreAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles for loading and error states */
+.loading, .error {
+  font-size: 18px;
+  color: #ff5733; /* Red for error or loading messages */
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Centering elements and responsiveness */
+button:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 20px;
+  }
+
+  button {
+    padding: 10px 18px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .score-container {
+    font-size: 20px;
+  }
+}
+
+/* Adding a background effect to buttons */
+button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+button:hover::after {
+  width: 100%;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Adding a smooth transition to quiz-container */
+.quiz-container {
+  transition: transform 0.3s ease-in-out;
+}
+
+.quiz-container:hover {
+  transform: scale(1.02);
+}
+
+
+/* Styles for the score display */
+.score-container {
+  font-size: 28px;
+  font-weight: bold;
+  color: #28a745; /* Default color for score */
+  margin-top: 30px;
+  animation: scoreAnimation 1s ease-in-out;
+  position: relative;
+  text-align: center;
+}
+
+/* Animated score counter (count-up effect) */
+@keyframes countUp {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Keyframes for score display animation */
+@keyframes scoreAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated score display container with gradient */
+.score-container {
+  background: linear-gradient(135deg, #28a745, #007bff); /* Gradient background */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: countUp 2s ease-out forwards;
+}
+
+/* Adding the confetti effect */
+@keyframes confetti {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Confetti animation class */
+.confetti {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #ff4081;
+  border-radius: 50%;
+  animation: confetti 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Adding the circular progress bar */
+.circular-progress {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #ddd;
+  border-radius: 50%;
+  position: relative;
+  background: conic-gradient(#28a745 0%, #28a745 50%, transparent 50%, transparent 100%);
+  margin: 20px auto;
+}
+
+.circular-progress .progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Make the score text bolder when hovered */
+.score-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Score container media query for responsiveness */
+@media (max-width: 768px) {
+  .score-container {
+    font-size: 24px;
+    padding: 12px;
+  }
+  
+  .circular-progress {
+    width: 80px;
+    height: 80px;
+  }
+}
