@@ -85,12 +85,12 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173", // ✅ Vite Frontend (Development)
   "http://localhost:3000", // ✅ React Default Frontend (If needed)
-  "https://glittery-lollipop-b2c950.netlify.app", // ✅ Deployed Frontend
-  "https://jolly-marzipan-57daaf.netlify.app" // ✅ Another Deployed Frontend
+  "https://velvety-pudding-e59557.netlify.app", // ✅ Deployed Frontend
+  "https://velvety-pudding-e59557.netlify.app" // ✅ Another Deployed Frontend
 ];
 
 const corsOptions = {
-  origin: "https://jolly-marzipan-57daaf.netlify.app", // Your frontend domain
+  origin: "https://velvety-pudding-e59557.netlify.app", // Your frontend domain
   methods: "GET,POST,PUT,DELETE", // Allowed HTTP methods
   allowedHeaders: "Content-Type,Authorization", // Allowed headers
 };

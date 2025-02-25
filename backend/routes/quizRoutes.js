@@ -39,8 +39,8 @@ router.use((req, res, next) => {
     const allowedOrigins = [
         "http://localhost:5173", // ✅ Vite frontend (local)
         "http://localhost:3000", // ✅ React frontend (if needed)
-        "https://glittery-lollipop-b2c950.netlify.app", // ✅ Deployed frontend
-        "https://jolly-marzipan-57daaf.netlify.app" // ✅ Another frontend
+        "https://velvety-pudding-e59557.netlify.app", // ✅ Deployed frontend
+        "https://velvety-pudding-e59557.netlify.app" // ✅ Another frontend
     ];
     
     const origin = req.headers.origin;

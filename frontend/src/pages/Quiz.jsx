@@ -61,7 +61,7 @@ const Quiz = () => {
     const [score, setScore] = useState(null);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/quiz")
+        axios.get("https://quiz-gane-rn-final.onrender.com/api/quiz") //http://localhost:5000
             .then(res => setQuestions(res.data))
             .catch(err => console.log(err));
     }, []);
@@ -76,7 +76,7 @@ const Quiz = () => {
     };
 
     const submitAnswers = () => {
-        axios.post("http://localhost:5000/api/quiz/submit", { answers })
+        axios.post("https://quiz-gane-rn-final.onrender.com/api/quiz/submit", { answers })
             .then(res => setScore(res.data.score))
             .catch(err => console.log(err));
     };
